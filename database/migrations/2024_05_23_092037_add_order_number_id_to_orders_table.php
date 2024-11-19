@@ -14,7 +14,6 @@ class AddOrderNumberIdToOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('order_number_id')->nullable();
 
             $table->foreign('order_number_id')->references('id')->on('order_numbers')->onDelete('set null');
         });

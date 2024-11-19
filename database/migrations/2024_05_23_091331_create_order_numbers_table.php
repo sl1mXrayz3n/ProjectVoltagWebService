@@ -32,3 +32,4 @@ class CreateOrderNumbersTable extends Migration
 }
 
 
+

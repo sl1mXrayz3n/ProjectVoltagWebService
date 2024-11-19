@@ -14,7 +14,6 @@ class AddCounterpartyIdToOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('counterparty_id')->nullable();
 
             $table->foreign('counterparty_id')->references('id')->on('counterparties')->onDelete('set null');
         });

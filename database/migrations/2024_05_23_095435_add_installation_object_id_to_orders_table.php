@@ -14,7 +14,6 @@ class AddInstallationObjectIdToOrdersTable extends Migration
     public function up()
     {
         Schema::table('orders', function (Blueprint $table) {
-            $table->unsignedBigInteger('installation_object_id')->nullable();
 
             $table->foreign('installation_object_id')->references('id')->on('installation_objects')->onDelete('set null');
         });
