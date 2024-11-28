@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\OrderNumberFilter;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -48,7 +49,7 @@ class OrderNumber extends Resource
     }
     public static function label()
     {
-        return 'Номера заказов';
+        return '3. Номер заказа';
     }
 
     public static function singularLabel()

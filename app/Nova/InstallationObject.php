@@ -49,7 +49,7 @@ class InstallationObject extends Resource
 
     public static function label()
     {
-        return 'Объекты установки';
+        return '4. Объект установки';
     }
 
     public static function singularLabel()

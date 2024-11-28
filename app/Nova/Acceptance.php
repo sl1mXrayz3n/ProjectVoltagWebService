@@ -48,7 +48,7 @@ class Acceptance extends Resource
     }
     public static function label()
     {
-        return 'Приёмка';
+        return '7. Приёмка';
     }
 
     public static function singularLabel()

@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class InstallationObject extends Model
 {
-    protected $fillable = ['name'];
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'installation_object_id');
+    }
 }
-

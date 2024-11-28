@@ -51,7 +51,7 @@ class Counterparty extends Resource
 
     public static function label()
     {
-        return 'Контрагенты';
+        return '5. Контрагент';
     }
 
     public static function singularLabel()

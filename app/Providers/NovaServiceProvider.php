@@ -34,6 +34,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             \App\Nova\OrderType::class,
             \App\Nova\Acceptance::class,
             \App\Nova\User::class,
+            \App\Nova\OrderReport::class,
         ]);
     }
 

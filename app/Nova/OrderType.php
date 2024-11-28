@@ -49,7 +49,7 @@ class OrderType extends Resource
 
     public static function label()
     {
-        return 'Типы заказов';
+        return '6. Тип заказа';
     }
 
     public static function singularLabel()

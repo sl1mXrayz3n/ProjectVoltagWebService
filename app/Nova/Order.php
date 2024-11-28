@@ -8,10 +8,12 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Select;
+use App\Nova\Filters\OrderNumberFilter;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use App\Nova\Filters\InstallationObjectFilter;
 
 class Order extends Resource
 {
@@ -70,7 +72,10 @@ class Order extends Resource
 
     public function filters(NovaRequest $request)
     {
-        return [];
+        return [
+            new OrderNumberFilter,
+            new InstallationObjectFilter,
+        ];
     }
 
     public function lenses(NovaRequest $request)
@@ -85,7 +90,7 @@ class Order extends Resource
 
     public static function label()
     {
-        return 'Заказы';
+        return '1. Заказы';
     }
 
     public static function singularLabel()
