@@ -35,6 +35,11 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             \App\Nova\Acceptance::class,
             \App\Nova\User::class,
             \App\Nova\OrderReport::class,
+            \App\Nova\ServiceRequest::class,
+            \App\Nova\EquipmentStatus::class,
+            \App\Nova\Responsible::class,
+            \App\Nova\RejectionReason::class,
+            \App\Nova\RequestStatus::class,
         ]);
     }
 
