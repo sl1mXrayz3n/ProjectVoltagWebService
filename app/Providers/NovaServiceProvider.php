@@ -41,6 +41,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             \App\Nova\RejectionReason::class,
             \App\Nova\RequestStatus::class,
             \App\Nova\Summary::class,
+            \App\Nova\Otchet::class,
         ]);
     }
 

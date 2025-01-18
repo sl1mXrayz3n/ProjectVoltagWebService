@@ -9,7 +9,7 @@ use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use Laravel\Nova\Fields\Textarea;
+use Illuminate\Http\Request;
 
 class ServiceRequest extends Resource
 {
@@ -49,9 +49,11 @@ class ServiceRequest extends Resource
                 ->sortable()
                 ->rules('required'),
 
-            Textarea::make('Описание заявки', 'request_description')
-                ->sortable()
-                ->rules('required'),
+            Text::make('Описание заявки', 'request_description')
+                ->asHtml()
+                ->displayUsing(function ($value) {
+                    return '<div class="text-content">' . nl2br(e($value)) . '</div>';
+                }),
 
             Text::make('Решение', 'solution')
                 ->sortable()
