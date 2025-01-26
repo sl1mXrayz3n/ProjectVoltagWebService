@@ -21,7 +21,7 @@ class RequestStatus extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Status')
+            Text::make('Статус заявки', 'status')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -49,7 +49,7 @@ class RequestStatus extends Resource
 
     public static function label()
     {
-        return '5. Статус заявки';
+        return '4. Статус заявки';
     }
 
     public static function singularLabel()

@@ -99,7 +99,7 @@ class ServiceRequest extends Resource
 
     public static function label()
     {
-        return '1. Сервисная служба';
+        return 'Сервисная служба';
     }
 
     public static function singularLabel()

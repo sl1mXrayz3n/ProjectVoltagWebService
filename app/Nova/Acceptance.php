@@ -21,7 +21,7 @@ class Acceptance extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Acceptance Name', 'name')
+            Text::make('Наименование приёмки', 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -48,7 +48,7 @@ class Acceptance extends Resource
     }
     public static function label()
     {
-        return '7. Приёмка';
+        return '5. Приёмка';
     }
 
     public static function singularLabel()

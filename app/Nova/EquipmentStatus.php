@@ -23,7 +23,7 @@ class EquipmentStatus extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name', 'name')
+            Text::make('Статус оборудования', 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -51,7 +51,7 @@ class EquipmentStatus extends Resource
 
     public static function label()
     {
-        return '2. Статус оборудования';
+        return '1. Статус оборудования';
     }
 
     public static function singularLabel()

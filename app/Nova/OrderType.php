@@ -21,7 +21,7 @@ class OrderType extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Order Type Name', 'name')
+            Text::make('Тип заказа', 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -49,7 +49,7 @@ class OrderType extends Resource
 
     public static function label()
     {
-        return '6. Тип заказа';
+        return '4. Тип заказа';
     }
 
     public static function singularLabel()

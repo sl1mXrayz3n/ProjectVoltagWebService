@@ -22,7 +22,7 @@ class OrderNumber extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Order Number', 'number')
+            Text::make('Номер заказа', 'number')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -49,7 +49,7 @@ class OrderNumber extends Resource
     }
     public static function label()
     {
-        return '3. Номер заказа';
+        return '1. Номер заказа';
     }
 
     public static function singularLabel()
@@ -57,5 +57,6 @@ class OrderNumber extends Resource
         return 'Номер заказа';
     }
     public static $group = 'Коммерческий отдел';
+    public static $priority = 2;
 }
 

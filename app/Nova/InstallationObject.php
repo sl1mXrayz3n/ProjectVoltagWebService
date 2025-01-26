@@ -21,7 +21,7 @@ class InstallationObject extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Installation Object Name', 'name')
+            Text::make('Название объекта установки', 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -49,7 +49,7 @@ class InstallationObject extends Resource
 
     public static function label()
     {
-        return '4. Объект установки';
+        return '2. Объект установки';
     }
 
     public static function singularLabel()
@@ -57,5 +57,6 @@ class InstallationObject extends Resource
         return 'Объект установки';
     }
     public static $group = 'Коммерческий отдел';
+    public static $priority = 3;
 }
 

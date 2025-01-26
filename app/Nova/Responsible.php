@@ -21,7 +21,7 @@ class Responsible extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Name')
+            Text::make('Ответственный', 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -49,7 +49,7 @@ class Responsible extends Resource
 
     public static function label()
     {
-        return '3. Ответственный';
+        return '2. Ответственный';
     }
 
     public static function singularLabel()

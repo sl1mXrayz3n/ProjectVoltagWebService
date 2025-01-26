@@ -90,7 +90,7 @@ class Order extends Resource
 
     public static function label()
     {
-        return '1. Заказы';
+        return 'Заказы';
     }
 
     public static function singularLabel()
@@ -98,4 +98,5 @@ class Order extends Resource
         return 'Заказ';
     }
     public static $group = 'Коммерческий отдел';
+    public static $priority = 1;
 }

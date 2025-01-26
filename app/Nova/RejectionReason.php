@@ -21,7 +21,7 @@ class RejectionReason extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Reason')
+            Text::make('Причина отказа', 'reason')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -49,7 +49,7 @@ class RejectionReason extends Resource
 
     public static function label()
     {
-        return '4. Причина отказа';
+        return '3. Причина отказа';
     }
 
     public static function singularLabel()

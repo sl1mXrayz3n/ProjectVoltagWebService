@@ -29,19 +29,18 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
         Nova::resources([
             \App\Nova\Order::class,
             \App\Nova\OrderNumber::class,
-            \App\Nova\Counterparty::class,
             \App\Nova\InstallationObject::class,
+            \App\Nova\Counterparty::class,
             \App\Nova\OrderType::class,
             \App\Nova\Acceptance::class,
             \App\Nova\User::class,
-            \App\Nova\OrderReport::class,
             \App\Nova\ServiceRequest::class,
             \App\Nova\EquipmentStatus::class,
             \App\Nova\Responsible::class,
             \App\Nova\RejectionReason::class,
             \App\Nova\RequestStatus::class,
-            \App\Nova\Summary::class,
             \App\Nova\Otchet::class,
+            \App\Nova\Summary::class,
         ]);
     }
 
@@ -96,8 +95,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
-        //
+        Nova::sortResourcesBy(function ($resource) {
+            return $resource::$priority ?? 99999;
+        });
     }
 }

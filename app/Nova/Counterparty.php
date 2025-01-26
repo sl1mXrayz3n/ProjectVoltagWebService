@@ -23,7 +23,7 @@ class Counterparty extends Resource
         return [
             ID::make()->sortable(),
 
-            Text::make('Counterparty Name', 'name')
+            Text::make('Имя контрагента', 'name')
                 ->sortable()
                 ->rules('required', 'max:255'),
         ];
@@ -51,7 +51,7 @@ class Counterparty extends Resource
 
     public static function label()
     {
-        return '5. Контрагент';
+        return '3. Контрагент';
     }
 
     public static function singularLabel()
