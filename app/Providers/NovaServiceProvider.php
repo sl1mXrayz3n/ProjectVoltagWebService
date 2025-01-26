@@ -41,6 +41,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
             \App\Nova\RequestStatus::class,
             \App\Nova\Otchet::class,
             \App\Nova\Summary::class,
+            \App\Nova\LaunchTestSection::class,
         ]);
     }
 
