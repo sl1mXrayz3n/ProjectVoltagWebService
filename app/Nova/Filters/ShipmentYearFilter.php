@@ -3,38 +3,33 @@
 namespace App\Nova\Filters;
 
 use Laravel\Nova\Filters\Filter;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\Builder;
 
 class ShipmentYearFilter extends Filter
 {
-    /**
-     * The filter's component.
-     *
-     * @var string
-     */
-    public $component = 'select-filter';
+    public $name = 'Фильтр по году отгрузки';
 
-    /**
-     * Apply the filter to the given query.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  mixed  $value
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function apply(NovaRequest $request, $query, $value)
+    public function apply(Request $request, $query, $value)
     {
-        return $query;
+        return $query->where('shipment_year', $value);
     }
 
-    /**
-     * Get the filter's available options.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function options(NovaRequest $request)
+    public function options(Request $request)
     {
-        return [];
+        return [
+            '2030' => 2030,
+            '2029' => 2029,
+            '2028' => 2028,
+            '2027' => 2027,
+            '2026' => 2026,
+            '2025' => 2025,
+            '2024' => 2024,
+            '2023' => 2023,
+            '2022' => 2022,
+            '2021' => 2021,
+            '2020' => 2020,
+            // добавь сюда все нужные года
+        ];
     }
 }

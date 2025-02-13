@@ -3,38 +3,20 @@
 namespace App\Nova\Filters;
 
 use Laravel\Nova\Filters\Filter;
-use Laravel\Nova\Http\Requests\NovaRequest;
+use Illuminate\Http\Request;
+use App\Models\Counterparty; // Убедись, что путь правильный
 
 class CounterpartyFilter extends Filter
 {
-    /**
-     * The filter's component.
-     *
-     * @var string
-     */
-    public $component = 'select-filter';
+    public $name = 'Фильтр по контрагенту';
 
-    /**
-     * Apply the filter to the given query.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @param  \Illuminate\Database\Eloquent\Builder  $query
-     * @param  mixed  $value
-     * @return \Illuminate\Database\Eloquent\Builder
-     */
-    public function apply(NovaRequest $request, $query, $value)
+    public function apply(Request $request, $query, $value)
     {
-        return $query;
+        return $query->where('counterparty_id', $value); // Поле контрагента
     }
 
-    /**
-     * Get the filter's available options.
-     *
-     * @param  \Laravel\Nova\Http\Requests\NovaRequest  $request
-     * @return array
-     */
-    public function options(NovaRequest $request)
+    public function options(Request $request)
     {
-        return [];
+        return Counterparty::pluck('name', 'id')->toArray();
     }
 }

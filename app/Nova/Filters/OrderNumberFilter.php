@@ -2,21 +2,22 @@
 
 namespace App\Nova\Filters;
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
-use App\Models\OrderNumber;
+use Illuminate\Http\Request;
+use App\Models\OrderNumber; // Убедись, что путь правильный
 
 class OrderNumberFilter extends Filter
 {
-    public $name = 'Номер заказа';
+    public $name = 'Фильтр по номеру заказа';
 
     public function apply(Request $request, $query, $value)
     {
-        return $query->where('order_number_id', $value);
+        return $query->where('order_number_id', $value); // Убедись, что поле называется order_number_id
     }
 
     public function options(Request $request)
     {
-        return OrderNumber::all()->pluck('number', 'id')->toArray();
+        // Генерируем список из связанных значений номера заказа
+        return OrderNumber::pluck('number', 'id')->toArray();
     }
 }

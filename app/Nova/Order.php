@@ -2,18 +2,22 @@
 
 namespace App\Nova;
 
+use App\Nova\Filters\OrderNumberFilter;
+use App\Nova\Filters\AcceptanceFilter;
+use App\Nova\Filters\CounterpartyFilter;
+use App\Nova\Filters\OrderTypeFilter;
+use App\Nova\Filters\ShipmentYearFilter;
+use App\Nova\Filters\InstallationObjectFilter;
 use Laravel\Nova\Fields\Trix;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Select;
-use App\Nova\Filters\OrderNumberFilter;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use App\Nova\Filters\InstallationObjectFilter;
 
 class Order extends Resource
 {
@@ -64,7 +68,6 @@ class Order extends Resource
                 }),
         ];
     }
-
     public function cards(NovaRequest $request)
     {
         return [];
@@ -75,6 +78,10 @@ class Order extends Resource
         return [
             new OrderNumberFilter,
             new InstallationObjectFilter,
+            new CounterpartyFilter,
+            new OrderTypeFilter,
+            new AcceptanceFilter,
+            new ShipmentYearFilter,
         ];
     }
 

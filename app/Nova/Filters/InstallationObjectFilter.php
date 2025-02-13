@@ -2,22 +2,21 @@
 
 namespace App\Nova\Filters;
 
-use Illuminate\Http\Request;
 use Laravel\Nova\Filters\Filter;
-use App\Models\InstallationObject;
+use Illuminate\Http\Request;
+use App\Models\InstallationObject; // Убедись, что путь правильный
 
 class InstallationObjectFilter extends Filter
 {
-    public $name = 'Объект установки';
+    public $name = 'Фильтр по объекту установки';
 
     public function apply(Request $request, $query, $value)
     {
-        \Log::info('Applying InstallationObjectFilter with value: ' . $value);
-        return $query->where('installation_object_id', $value);
+        return $query->where('installation_object_id', $value); // Поле объекта установки
     }
 
     public function options(Request $request)
     {
-        return InstallationObject::all()->pluck('name', 'id')->toArray();
+        return InstallationObject::pluck('name', 'id')->toArray();
     }
 }
